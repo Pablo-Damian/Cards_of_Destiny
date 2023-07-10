@@ -1,0 +1,181 @@
+﻿/* Estilos comunes para todos los tamaños de pantalla */
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+/* Estilos para los elementos que utilizarán la fuente "Impact" */
+.mensaje-container,
+.gold-container,
+.game-over,
+.game-over-winner,
+#energiaH,
+#energiaE {
+  font-family: Impact, sans-serif;
+}
+
+.circle-container {
+  width: 800px;
+  height: 200px;
+  position: relative;
+  perspective: 1000px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.circle {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-size: cover;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: transform 0.5s, transform-origin 0.5s;
+}
+
+#heroe {
+  left: 0;
+}
+
+#destiny {
+  left: 300px;
+}
+
+#enemy {
+  left: 600px;
+}
+
+.flipped {
+  transform: rotateY(180deg) scale(1.2);
+  transform-origin: center;
+}
+
+.back {
+  background-image: url('../img/dorso.png') !important;
+}
+
+.volteo {
+  position: absolute;
+  text-align: center;
+  width: 200px;
+  font-size: 14px;
+}
+
+#volteoH {
+  top: 220px;
+  left: 0;
+}
+
+#volteoE {
+  top: 220px;
+  left: 600px;
+}
+
+.zoom-out {
+  transform: scale(0.8);
+  transition: transform 0.5s;
+}
+
+.mensaje-container {
+  position: absolute;
+  width: 200px;
+  text-align: center;
+  font-size: 20px;
+  /*font-weight: bold;*/
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.mensaje {
+  margin-top: 10px;
+}
+
+#mensajeH {
+  top: 560px;
+  left: 400px;
+  color: lightgreen;
+}
+
+#mensajeE {
+  top: 560px;
+  left: 1000px;
+  color: lightgreen;
+}
+
+.energia-container {
+  position: absolute;
+  width: 200px;
+  text-align: center;
+  font-size: 28px;
+  /*font-weight: bold;*/
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.energia {
+  margin-top: -50px;
+}
+
+#energiaH {
+  top: 250px;
+  left: 400px;
+}
+
+#energiaE {
+  top: 250px;
+  left: 1010px;
+}
+
+.gold-container {
+  position: absolute;
+  width: 800px;
+  text-align: center;
+  font-size: 34px;
+  font-weight: bold;
+  color: goldenrod;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+#gold {
+  top: 100px;
+  left: 400px;
+}
+
+.game-over {
+  top: 580px;
+  position: absolute;
+  width: 400px;
+  text-align: center;
+  font-size: 30px;
+  /*font-weight: bold;*/
+  color: red;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+}
+
+.game-over-winner {
+  top: 580px;
+  color: blue;
+}
+
+/* Estilos para pantallas más pequeñas */
+@media (max-width: 768px) {
+  .circle-container {
+    width: 400px;
+    height: 100px;
+    /* Ajustar otros estilos necesarios... */
+  }
+}
+
+/* Estilos para pantallas aún más pequeñas */
+@media (max-width: 576px) {
+  .circle-container {
+    width: 200px;
+    height: 50px;
+    /* Ajustar otros estilos necesarios... */
+  }
+}

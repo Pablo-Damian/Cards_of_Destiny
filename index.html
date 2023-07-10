@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <title>Cards of Destiny</title>
+  <script>
+    // Función para redirigir según la resolución de la pantalla
+    function redirectToCards() {
+      var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+      var screenHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+
+      if (screenWidth < 1600 && screenHeight < 900) {
+        window.location.href = "Cards_of_Destiny(v2).html";
+      } else {
+        window.location.href = "Cards_of_Destiny.html";
+      }
+    }
+
+    // Función para agregar evento de clic a toda la página
+    function addClickEventToPage() {
+      document.body.addEventListener("click", redirectToCards);
+    }
+
+    // Esperar a que la página se cargue completamente antes de agregar el evento de clic
+    window.addEventListener("load", addClickEventToPage);
+
+    // Crea un elemento de audio
+    var audio = new Audio("sound/inicio.mp3");
+    audio.loop = true; // Reproduce en bucle el archivo de sonido
+
+    // Reproduce el sonido al cargar la página
+    window.addEventListener("load", function() {
+      audio.play();
+    });
+  </script>
+  <style>
+    body {
+      background-image: url("img/fondo_index.jpg");
+      background-size: cover;
+      background-position: center top;
+      background-repeat: no-repeat;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #pageTitle {
+      font-weight: bold;
+      color: orange;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+      font-size: 72px;
+      margin-top: 20px;
+    }
+
+    #pressStart {
+      font-weight: bold;
+      font-size: 24px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+      animation: appearDisappear 2s infinite;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+    }
+
+    @keyframes appearDisappear {
+      0%, 100% {
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+        color: red;
+      }
+      66% {
+        color: green;
+      }
+      83% {
+        color: blue;
+      }
+    }
+  </style>
+</head>
+<body onclick="redirectToCards()">
+  <h1 id="pageTitle">Cards of Destiny</h1>
+  <div id="pressStart">
+    <h2>PRESS START</h2>
+  </div>
+</body>
+</html>
