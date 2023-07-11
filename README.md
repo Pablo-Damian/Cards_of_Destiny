@@ -1,4 +1,4 @@
-# Cards_of_Destiny
+# Cards of Destiny
 
 TP Final Tecno3F
 
